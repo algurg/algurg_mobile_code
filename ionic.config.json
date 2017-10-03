@@ -1,0 +1,8 @@
+{
+  "name": "gulfHR",
+  "app_id": "76099489",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

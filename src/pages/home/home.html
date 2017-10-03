@@ -1,0 +1,100 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+        <img src="assets/logopayslip.png" class="header-img"/>
+    </ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only>
+          <ion-icon name="man" color='secondary'></ion-icon>
+        </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+         <h5>Name</h5>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+         {{name}}
+     </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <h5>Number</h5>
+     </ion-col>
+    </ion-row>
+    <ion-row>
+     <ion-col>
+      {{number}}
+     </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+       <h5>Company</h5>
+      </ion-col>
+     </ion-row>
+     <ion-row>
+      <ion-col>
+        {{company}}
+      </ion-col>
+     </ion-row>
+     <ion-row>
+      <ion-col>
+       <h5>Department</h5>
+      </ion-col>
+     </ion-row>
+     <ion-row>
+      <ion-col>
+       {{department}}
+      </ion-col>
+     </ion-row>
+     <ion-row>
+      <ion-col>
+       <h5>Job Title</h5>
+      </ion-col>
+     </ion-row>
+     <ion-row>
+      <ion-col>
+        {{job_title}}
+      </ion-col>
+     </ion-row>
+     <ion-row>
+      <ion-col>
+       <h5>Engagement Date</h5>
+      </ion-col>
+     </ion-row>
+     <ion-row>
+      <ion-col>
+       {{engagement_date}}
+      </ion-col>
+     </ion-row>
+     <ion-row>
+      <ion-col>
+       <h5>Nationality</h5>
+      </ion-col>
+     </ion-row>
+     <ion-row>
+      <ion-col>
+        {{nationality}}
+      </ion-col>
+     </ion-row>
+     <ion-row>
+      <ion-col>
+       <h5>Manager</h5>
+      </ion-col>
+     </ion-row>
+     <ion-row>
+      <ion-col>
+       {{manager}}
+      </ion-col>
+     </ion-row>
+  </ion-grid>
+</ion-content>

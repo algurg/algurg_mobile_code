@@ -1,0 +1,61 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>
+            <img src="assets/logopayslip.png" class="header-img"/>
+        </ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only>
+              <ion-icon name="plane" color='secondary'></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+
+<ion-content padding>
+    <form [formGroup]="authForm" (ngSubmit)="submitForm(authForm.value)">
+        <ion-item>
+            <ion-label>Leave Type</ion-label>
+            <ion-select [formControl]="authForm.controls['leaveType']">
+                <ion-option *ngFor="let type of leaveTypes" [value]="type">{{type}}</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Start Date</ion-label>
+            <ion-datetime displayFormat="MMM DD, YYYY" 
+            [(ngModel)]="todayStartDate"  [formControl]="authForm.controls['startDate']"></ion-datetime>         
+        </ion-item>
+        
+        <ion-item>
+            <ion-label floating>End Date</ion-label>
+            <ion-datetime displayFormat="MMM DD, YYYY" 
+            [(ngModel)]="todayEndDate" [formControl]="authForm.controls['endDate']"></ion-datetime>         
+        </ion-item>
+       
+        <div class="error-box" *ngIf="authForm.controls['endDate'].hasError('required') && authForm.controls['endDate'].touched">* End Date is required!</div>
+        <ion-item>
+            <ion-label floating>Leave Contact</ion-label>
+            <ion-input type="text" value="" [formControl]="authForm.controls['leaveContact']" ></ion-input>
+        </ion-item>
+        <div class="error-box" *ngIf="authForm.controls['leaveContact'].hasError('required') && authForm.controls['leaveContact'].touched">* Leave Contact is required!</div>
+    
+    <ion-item>
+        <ion-label floating>Leave Reason</ion-label>
+        <ion-input type="text" value="" [formControl]="authForm.controls['leaveReason']" ></ion-input>
+    </ion-item>
+    <div class="error-box" *ngIf="authForm.controls['leaveReason'].hasError('required') && authForm.controls['leaveReason'].touched">* Leave Reason is required!</div>
+    <br/>
+    <!--
+    <ion-item>
+    <ion-label>Alternate Manager</ion-label>
+    <ion-select [formControl]="authForm.controls['alternateManager']">
+    <ion-option *ngFor="let manager of alternateManagers" [value]="manager.EmployeeId">{{manager.Name}}</ion-option>
+    </ion-select>
+    </ion-item>
+    -->
+    <br/>
+		<button type="submit" ion-button full [disabled]="!(authForm.valid && isApplyRequest)" class="submit-btn">Apply Leave</button>
+    </form>
+</ion-content>

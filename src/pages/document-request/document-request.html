@@ -1,0 +1,65 @@
+<!--
+  Generated template for the DocumentRequestPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>
+            <img src="assets/logopayslip.png" class="header-img"/>
+        </ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only>
+              <ion-icon name="ios-book" color='secondary'></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+
+
+<ion-content padding>
+    <form [formGroup]="authForm" (ngSubmit)="submitForm(authForm.value)">
+        <ion-item>
+            <ion-label>Document Type*</ion-label>
+            <ion-select [formControl]="authForm.controls['documentType']">
+                <ion-option *ngFor="let type of documentTypes" [value]="type">{{type}}</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Request Addressed To</ion-label>
+            <ion-input type="text" value="" [formControl]="authForm.controls['requestAddressTo']" ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Purpose (for salary statement)</ion-label>
+          <ion-input type="text" value="" [formControl]="authForm.controls['purpose']" ></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Bank Name (for salary transfer letter)</ion-label>
+            <ion-input type="text" value="" [formControl]="authForm.controls['bankName']" ></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Bank Account No (for salary transfer letter)</ion-label>
+            <ion-input type="text" value="" [formControl]="authForm.controls['bankAccountNo']" ></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Particular statement to be mentioned in letter</ion-label>
+            <ion-input type="text" value="" [formControl]="authForm.controls['statement']" ></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Remark</ion-label>
+            <ion-input type="text" value="" [formControl]="authForm.controls['remark']" ></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Language*</ion-label>
+            <ion-select [formControl]="authForm.controls['language']">
+                <ion-option *ngFor="let lang of languages" [value]="lang">{{lang}}</ion-option>
+            </ion-select>
+            </ion-item>
+    <br/>
+		<button type="submit" ion-button full [disabled]="!authForm.valid" class="submit-btn">Apply Document</button>
+    </form>
+</ion-content>

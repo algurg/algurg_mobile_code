@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+        <img src="assets/logopayslip.png" class="header-img"/>
+    </ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only>
+          <ion-icon name="mail" color='secondary'></ion-icon>
+        </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <button ion-item *ngFor="let item of inboxItems" (click)="itemTapped($event, item)">
+      <ion-icon name="mail" color='secondary' item-left></ion-icon>
+        <ion-grid>
+           <ion-row>
+             <ion-col><strong>Requested By:</strong></ion-col>
+             <ion-col>{{item.reqBy}}</ion-col>
+           </ion-row>
+           <ion-row>
+              <ion-col><strong>Req. Date:</strong></ion-col>
+              <ion-col>{{item.reqDate}}</ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col><strong>Status:</strong></ion-col>
+                <ion-col>{{item.status}}</ion-col>
+              </ion-row>
+        </ion-grid>
+    </button>
+  </ion-list>
+</ion-content>
